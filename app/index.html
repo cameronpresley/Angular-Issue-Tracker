@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="bugTrackerApp">
 <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
     <meta charset="UTF-8">
     <title>Hello World</title>
 </head>
 <body>
-<p>Hello World</p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="span12">
+            <h1>Issues</h1>
+        </div>
+    </div>
+    <div class="row" ng-controller="issueController">
+        <div class="col-md-4">
+            <h2>To Do</h2>
+            <ul>
+                <li ng-repeat="issue in issues">
+                    <details>
+                        <summary>
+                            {{issue.title}}
+                        </summary>
+                        <p>{{issue.description}}</p>
+
+                    </details>
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>In Progress</h2>
+        </div>
+        <div class="col-md-4">
+            <h2>Done</h2>
+        </div>
+    </div>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="js/controllers/dashBoardController.js"></script>
 </body>
 </html>
